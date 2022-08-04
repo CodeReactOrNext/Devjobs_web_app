@@ -1,3 +1,3 @@
-# devjobs-web-app
+# Devjobs Web App
 
-Frontendmentor.io Challenge done by the team.
+Frontendmentor.io Challenge done by the team of noobs.
