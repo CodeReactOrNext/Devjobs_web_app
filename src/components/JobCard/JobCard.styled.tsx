@@ -4,21 +4,22 @@ export const StyledContainer = styled.div`
 	position: relative;
 	background-color: #19202d;
 	border-radius: 6px;
-	width: 350px;
+	width: 320px;
 	height: 228px;
 	padding: 48px 32px 32px 32px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	@media (max-width: 1024px) {
-		width: 340px;
-		padding: 48px 30px 32px 30px;
-	}
 
-	@media (max-width: 425px) {
-		width: 320px;
+	@media screen and (min-width: 425px) {
+		width: 340px;
 		padding: 48px 28px 32px 28px;
-	}
+	};
+
+	@media screen and (min-width: 1024px) {
+		width: 350px;
+		padding: 48px 30px 32px 30px;
+	};
 `;
 
 export const StyledLogoContainer = styled.div<{ bgColor: string }>`
@@ -62,13 +63,13 @@ export const StyledDetails = styled.div`
 	color: #6e8098;
 `;
 
-export const StyledDot = styled.div`
+export const StyledDot = styled.div<{ contract: string }>`
 	position: relative;
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
 	background: #6e8098;
-	top: 50%;
+	top: ${props => props.contract === 'Full Time' ? '50%' : '64%'}
 `;
 
 export const StyledCompanyName = styled.p`

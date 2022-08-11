@@ -19,7 +19,7 @@ const JobCard = ({ position, logo, backgroundColor, postedAt, contract, company,
 			</StyledLogoContainer>
 			<StyledInfo>
 				<StyledDetails>
-					{postedAt} <StyledDot /> {contract}
+					{postedAt} <StyledDot contract={contract} /> {contract}
 				</StyledDetails>
 				<StyledTitle>{position}</StyledTitle>
 				<StyledCompanyName>{company}</StyledCompanyName>
