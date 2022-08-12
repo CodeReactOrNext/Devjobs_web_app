@@ -9,6 +9,7 @@ export const StyledDarkModeToggle = styled.div`
 `;
 
 export const StyledDarkModeButton = styled.button`
+  display: flex;
   align-items: center;
   width: 48px;
   height: 24px;
@@ -22,7 +23,6 @@ export const StyledDarkModeButtonDot = styled.div<{ isDark: boolean }>`
   transition: all 0.3s;
   width: 14px;
   height: 14px;
-  margin: 0 6px;
   border-radius: 100%;
   background-color: #5964e0;
   transform: ${({ isDark }) => (isDark ? 'translateX(22px)' : 'translateX(0)')};
