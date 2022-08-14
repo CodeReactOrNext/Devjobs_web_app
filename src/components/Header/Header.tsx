@@ -6,12 +6,16 @@ import {
 import logo from '../../assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
 
-const Header = () => {
+interface Props {
+  darkModeHandler: () => void;
+}
+
+const Header = ({ darkModeHandler }: Props) => {
   return (
     <StyledHeader>
       <StyledHeaderContainer>
         <StyledLogo src={logo}></StyledLogo>
-        <DarkModeToggle></DarkModeToggle>
+        <DarkModeToggle darkModeHandler={darkModeHandler}></DarkModeToggle>
       </StyledHeaderContainer>
     </StyledHeader>
   );

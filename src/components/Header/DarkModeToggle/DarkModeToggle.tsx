@@ -8,22 +8,17 @@ import {
 
 import sunIcon from '../../../assets/desktop/icon-sun.svg';
 import moonIcon from '../../../assets/desktop/icon-moon.svg';
-import { useState } from 'react';
 
-const DarkModeToggle = () => {
-  const [darkModeIsOn, setDarkModeIsOn] = useState<boolean>(false);
+interface Props {
+  darkModeHandler: () => void;
+}
 
-  const darkModeHandler = () => {
-    setDarkModeIsOn(isOn => !isOn);
-  };
-
+const DarkModeToggle = ({ darkModeHandler }: Props) => {
   return (
     <StyledDarkModeToggle>
       <StyledSunIcon src={sunIcon}></StyledSunIcon>
       <StyledDarkModeButton onClick={darkModeHandler}>
-        <StyledDarkModeButtonDot
-          isDark={darkModeIsOn}
-        ></StyledDarkModeButtonDot>
+        <StyledDarkModeButtonDot></StyledDarkModeButtonDot>
       </StyledDarkModeButton>
       <StyledMoonIcon src={moonIcon}></StyledMoonIcon>
     </StyledDarkModeToggle>
