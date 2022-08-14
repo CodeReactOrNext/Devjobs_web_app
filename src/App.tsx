@@ -1,15 +1,19 @@
+import Header from './components/Header/Header';
 import { ThemeProvider } from 'styled-components';
-import { GlobaStyle } from './global.css';
+import { GlobalStyle } from './global.css';
 import { theme } from './themes/theme';
+import useDarkMode from './components/hooks/useDarkMode';
 
 export type ThemeType = typeof theme;
 
 function App() {
-	return (
-		<ThemeProvider theme={theme}>
-			<GlobaStyle />
-			<p>Test</p>
-		</ThemeProvider>
-	);
+  const [newTheme, setThemeMode] = useDarkMode(theme);
+
+  return (
+    <ThemeProvider theme={newTheme}>
+      <GlobalStyle />
+      <Header darkModeHandler={setThemeMode}></Header>
+    </ThemeProvider>
+  );
 }
 export default App;

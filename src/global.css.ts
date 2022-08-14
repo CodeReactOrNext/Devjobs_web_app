@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { ThemeType } from './App';
 
-export const GlobaStyle = createGlobalStyle<{ theme: ThemeType }>`
+export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 *{box-sizing: border-box;}
 
 html, body, div, span, applet, object, iframe,
@@ -54,6 +54,6 @@ table {
     font-size: 16px;
     line-height: 26px;
     height:100vh;
-	background-color: ${(props) => props.theme.lightMode.mainBackground};
+	background-color: ${props => props.theme.lightMode.mainBackground};
   }
 `;
