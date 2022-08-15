@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, We are Niemowlaki-w-Bordowych-Beretach</h1>
+<h1 align="center">Hi 👋, We are CodeReactOrNext</h1>
 <h3 align="center">A passionate team of frontend developers from Poland</h3>
 <h3 align="center">This is our first project: Devjobs Web App</h3>
 
