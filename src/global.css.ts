@@ -54,6 +54,6 @@ table {
     font-size: 16px;
     line-height: 26px;
     height:100vh;
-	background-color: ${props => props.theme.mode.mainBackground};
+	background-color: ${props => props.theme.mainBackground};
   }
 `;
