@@ -15,5 +15,6 @@ function App() {
       <Header darkModeHandler={setThemeMode}></Header>
     </ThemeProvider>
   );
+
 }
 export default App;
