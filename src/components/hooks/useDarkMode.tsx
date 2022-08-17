@@ -1,28 +1,32 @@
 import { useState } from 'react';
-
 import { ThemeType } from '../../App';
 
 interface NewThemeType extends ThemeType {
-  mode: { [key: string]: string };
-  themeMode: 'lightMode' | 'darkMode';
+	themeMode: string;
 }
 
 const useDarkMode = (theme: ThemeType): [NewThemeType, () => void] => {
-  const [themeMode, setThemeMode] = useState<'lightMode' | 'darkMode'>(
-    'lightMode'
-  );
+	const [themeMode, setThemeMode] = useState<'lightMode' | 'darkMode'>(
+		'lightMode'
+	);
 
-  const darkModeHandler = () => {
-    if (themeMode === 'lightMode') {
-      setThemeMode('darkMode');
-    } else {
-      setThemeMode('lightMode');
-    }
-  };
+	const darkModeHandler = () => {
+		if (themeMode === 'lightMode') {
+			setThemeMode('darkMode');
+		} else {
+			setThemeMode('lightMode');
+		}
+	};
 
-  let newTheme = { ...theme, mode: { ...theme[themeMode] }, themeMode };
+	const getNewTheme = () => {
+		if (themeMode === 'lightMode') {
+			return theme;
+		} else themeMode === 'darkMode';
+		return { ...theme, ...theme.darkMode, themeMode };
+	};
 
-  return [newTheme, darkModeHandler];
+	const newTheme = getNewTheme();
+	return [newTheme, darkModeHandler];
 };
 
 export default useDarkMode;
