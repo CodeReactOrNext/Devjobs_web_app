@@ -4,6 +4,7 @@ import bgHeaderTablet from '../../assets/tablet/bg-pattern-header.svg';
 import bgHeaderDesktop from '../../assets/desktop/bg-pattern-header.svg';
 
 export const StyledHeader = styled.header`
+  position: relative;
   width: 100%;
   min-height: 136px;
   background-repeat: no-repeat;
