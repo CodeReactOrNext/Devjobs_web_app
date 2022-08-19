@@ -1,4 +1,4 @@
-import { Job } from '../../types/JobCard';
+import { Job } from '../../../types/JobCard';
 import {
 	StyledCompanyName,
 	StyledContainer,
