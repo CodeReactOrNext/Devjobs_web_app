@@ -6,7 +6,7 @@ import {
 import logo from '../../assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
 import Button from '../Button/Button';
-import SearchField from '../SearchField/SearchField';
+import SearchField from './SearchField/SearchField';
 interface Props {
   darkModeHandler: () => void;
 }

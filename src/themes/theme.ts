@@ -9,8 +9,12 @@ const color = {
   dirtyViolet: '#c5c9f4',
   gray: ' #9DAEC2',
   mediumGray: '#303642',
-  lightmGray: '#696e76',
+  lightGray: '#696e76',
   darkGray: '#6E8098',
+  mediumDarkGray: '#303742',
+  veryLightGray: '#E8E8EA',
+  veryLightViolet: '#d5d8f7',
+  mediumLightGray: '#e2e6ea',
 };
 
 export const theme = {
@@ -24,6 +28,9 @@ export const theme = {
   buttonSecond: color.dirtyWhite,
   buttonSecondText: color.violet,
   buttonSecondHover: color.dirtyViolet,
+  checkMark: color.veryLightGray,
+  checkMarkHover: color.veryLightViolet,
+  inputDivider: color.mediumLightGray,
   themeMode: 'lightMode',
 
   darkMode: {
@@ -34,6 +41,8 @@ export const theme = {
     buttonSecond: color.mediumGray,
     buttonSecondHover: color.lightGrey,
     buttonSecondText: color.white,
+    checkMark: color.mediumDarkGray,
+    inputDivider: color.mediumGray,
     themeMode: 'darkMode',
   },
 
@@ -51,8 +60,8 @@ export const theme = {
     font-size: 24px;
     line-height: 30px;`,
     h4: `
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 17px;`,
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;`,
   },
 };
