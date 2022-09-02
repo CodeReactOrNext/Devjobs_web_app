@@ -16,9 +16,9 @@ const Header = ({ darkModeHandler }: Props) => {
     <>
       <StyledHeader>
         <StyledHeaderContainer>
-          <StyledLogo src={logo}></StyledLogo>
-          <DarkModeToggle darkModeHandler={darkModeHandler}></DarkModeToggle>
-          <SearchField></SearchField>
+          <StyledLogo src={logo} />
+          <DarkModeToggle darkModeHandler={darkModeHandler} />
+          <SearchField />
         </StyledHeaderContainer>
       </StyledHeader>
       {/* Testing Button  */}

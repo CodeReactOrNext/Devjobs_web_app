@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import FilterIcon from './FilterIcon';
 
-export const StyledSearchContainer = styled.div`
+export const StyledContainer = styled.div`
   position: absolute;
   bottom: -40px;
   padding: 0 24px;
@@ -19,7 +20,6 @@ export const StyledSearchForm = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 16px 0 24px; */
   background-color: ${({ theme }) => theme.boxBackground};
   border-radius: 6px;
   @media (min-width: 769px) {
@@ -40,16 +40,16 @@ export const StyledSearchInput = styled.input`
   width: 100%;
   height: 100%;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   caret-color: ${({ theme }) => theme.themeColor};
   outline: none;
   background-color: transparent;
 `;
 
-export const StyledSearchButton = styled.button`
-  width: 48px;
-  height: 48px;
+export const StyledSearchButton = styled.button<{ modal?: boolean }>`
+  width: ${({ modal }) => (modal ? '48px' : '100%')};
+  height: 3rem;
   border: none;
   transition: all 0.3s;
   cursor: pointer;
@@ -65,50 +65,66 @@ export const StyledSearchButton = styled.button`
     background-color: ${({ theme }) => theme.themeSecondColor};
   }
   @media (min-width: 768px) {
-    width: 84px;
+    width: 5.25rem;
   }
 `;
 
-export const StyledButtonText = styled.p`
-  font-size: 16px;
+export const StyledButtonText = styled.p<{ modal?: boolean }>`
+  font-size: 1rem;
   font-weight: 700;
   padding-top: 4px;
   color: ${({ theme }) => theme.basicColor};
   @media (max-width: 768px) {
-    display: none;
+    display: ${({ modal }) => (modal ? 'block' : 'none')};
   }
 `;
 
 export const StyledFilterButton = styled.button`
-  width: 48px;
+  width: 3rem;
   border: none;
   background: none;
-  height: 48px;
+  height: 3rem;
   display: none;
   @media (max-width: 768px) {
     display: block;
   }
 `;
 
-export const StyledFilterFieldContainer = styled.div<{ mobile?: 'mobile' }>`
+export const StyledFilterFieldContainer = styled.div<{
+  mobile?: 'mobile';
+  modal?: boolean;
+}>`
   position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  gap: 1rem;
+  padding-bottom: ${({ modal }) => (modal ? '24px' : '0')};
+  padding-left: ${({ modal }) => (modal ? '0' : '24px')};
+
   align-items: center;
   svg {
-    margin: 0 16px;
-    width: 28px;
-    height: 24px;
+    overflow: visible;
     fill: ${({ theme }) => theme.themeColor};
     @media (max-width: 769px) {
-      display: none;
+      display: ${({ modal }) => (modal ? 'block' : 'none')};
     }
   }
   @media (max-width: 769px) {
-    padding: 0 16px;
     display: ${({ mobile }) => mobile === 'mobile' && 'none'};
+  }
+  :after {
+    position: absolute;
+    content: '';
+
+    background: ${({ theme }) => theme.inputDivider};
+    ${({ modal }) =>
+      modal &&
+      `bottom: 0;
+    right: -1.5rem;
+    left: -1.5rem;
+    height: 1px;`}
   }
 `;
 
@@ -116,9 +132,9 @@ export const StyledButtonContainer = styled.div`
   width: 50%;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 1.25rem;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   @media (max-width: 769px) {
     justify-content: flex-end;
   }
@@ -126,11 +142,13 @@ export const StyledButtonContainer = styled.div`
 
 export const StyledFullTimeCheckboxContainer = styled.div<{
   mobile?: 'mobile';
+  modal?: boolean;
 }>`
   display: flex;
-  gap: 10px;
-  height: 24px;
-  width: 108px;
+  gap: 0.625rem;
+  height: 1.5rem;
+  margin: ${({ modal }) => (modal ? '24px 0' : '0')};
+  width: ${({ modal }) => (modal ? '100%' : '108px')};
   @media (max-width: 769px) {
     display: ${({ mobile }) => mobile === 'mobile' && 'none'};
   }
@@ -153,7 +171,7 @@ export const StyledCheckmark = styled.span<{ checked: boolean }>`
 `;
 
 export const CheckboxText = styled.span`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: ${({ theme }) => theme.headingText};
 `;
@@ -165,4 +183,8 @@ export const StyledFullTimeCheckbox = styled.input`
   cursor: pointer;
   height: 0;
   width: 0;
+`;
+
+export const StyledFilterIcon = styled(FilterIcon)`
+  fill: ${({ theme }) => theme.filterIcon};
 `;

@@ -31,6 +31,7 @@ export const theme = {
   checkMark: color.veryLightGray,
   checkMarkHover: color.veryLightViolet,
   inputDivider: color.mediumLightGray,
+  filterIcon: color.darkGray,
   themeMode: 'lightMode',
 
   darkMode: {
