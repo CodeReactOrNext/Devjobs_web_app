@@ -17,6 +17,6 @@ export default function Modal({ backdropHandler, children }: Props) {
       ></StyledOverlay>
       <StyledModal>{children}</StyledModal>
     </>,
-    document.getElementById('portal')!
+    document.getElementById('modal')!
   );
 }
