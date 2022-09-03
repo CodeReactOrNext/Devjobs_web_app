@@ -24,14 +24,7 @@ const JobList = () => {
           if (index < loadMore) {
             return (
               <JobCard
-                key={job.id}
-                position={job.position}
-                postedAt={job.postedAt}
-                logo={job.logo}
-                location={job.location}
-                backgroundColor={job.logoBackground}
-                company={job.company}
-                contract={job.contract}
+                job={job}
               />
             );
           }

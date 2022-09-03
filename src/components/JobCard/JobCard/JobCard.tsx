@@ -1,4 +1,5 @@
 import { Job } from '../../../types/JobCard';
+import JobView from '../JobView/JobView';
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -11,21 +12,26 @@ import {
 	StyledTitle,
 } from './JobCard.styled';
 
-const JobCard = ({ position, logo, backgroundColor, postedAt, contract, company, location }: Job) => {
+type Props = {
+	job: Job;
+};
+
+const JobCard = ({ job }: Props) => {
 	return (
-		<StyledContainer>
-			<StyledLogoContainer bgColor={backgroundColor}>
-				<StyledLogo src={`src/${logo}`} />
-			</StyledLogoContainer>
-			<StyledInfo>
-				<StyledDetails>
-					{postedAt} <StyledDot contract={contract} /> {contract}
-				</StyledDetails>
-				<StyledTitle>{position}</StyledTitle>
-				<StyledCompanyName>{company}</StyledCompanyName>
-				<StyledLocation>{location}</StyledLocation>
-			</StyledInfo>
-		</StyledContainer>
+		// <StyledContainer>
+		// 	<StyledLogoContainer bgColor={job.logoBackground}>
+		// 		<StyledLogo src={`src/${job.logo}`} />
+		// 	</StyledLogoContainer>
+		// 	<StyledInfo>
+		// 		<StyledDetails>
+		// 			{job.postedAt} <StyledDot contract={job.contract} /> {job.contract}
+		// 		</StyledDetails>
+		// 		<StyledTitle>{job.position}</StyledTitle>
+		// 		<StyledCompanyName>{job.company}</StyledCompanyName>
+		// 		<StyledLocation>{job.location}</StyledLocation>
+		// 	</StyledInfo>
+		// </StyledContainer>
+		<JobView job={job} />
 	);
 };
 
