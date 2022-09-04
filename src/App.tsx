@@ -5,20 +5,23 @@ import { theme } from './themes/theme';
 import useDarkMode from './components/hooks/useDarkMode';
 import JobList from './components/JobCard/JobList/JobList';
 import { FilterContextProvider } from './contexts/filter-context';
+import { JobViewContextProvider } from './contexts/jobView-context';
 export type ThemeType = typeof theme;
 
 function App() {
-  const [newTheme, setThemeMode] = useDarkMode(theme);
+	const [newTheme, setThemeMode] = useDarkMode(theme);
 
-  return (
-    <ThemeProvider theme={newTheme}>
-      <div id='backdrop'></div>
-      <FilterContextProvider>
-        <GlobalStyle />
-        <Header darkModeHandler={setThemeMode}></Header>
-        <JobList />
-      </FilterContextProvider>
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider theme={newTheme}>
+			<div id='backdrop'></div>
+			<JobViewContextProvider>
+				<FilterContextProvider>
+					<GlobalStyle />
+					<Header darkModeHandler={setThemeMode}></Header>
+					<JobList />
+				</FilterContextProvider>
+			</JobViewContextProvider>
+		</ThemeProvider>
+	);
 }
 export default App;

@@ -1,5 +1,6 @@
+import { useContext } from 'react';
+import JobViewContext from '../../../contexts/jobView-context';
 import { Job } from '../../../types/JobCard';
-import JobView from '../JobView/JobView';
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -17,21 +18,27 @@ type Props = {
 };
 
 const JobCard = ({ job }: Props) => {
+	const { selectedJob, setSelectedJob } = useContext(JobViewContext);
+
 	return (
-		// <StyledContainer>
-		// 	<StyledLogoContainer bgColor={job.logoBackground}>
-		// 		<StyledLogo src={`src/${job.logo}`} />
-		// 	</StyledLogoContainer>
-		// 	<StyledInfo>
-		// 		<StyledDetails>
-		// 			{job.postedAt} <StyledDot contract={job.contract} /> {job.contract}
-		// 		</StyledDetails>
-		// 		<StyledTitle>{job.position}</StyledTitle>
-		// 		<StyledCompanyName>{job.company}</StyledCompanyName>
-		// 		<StyledLocation>{job.location}</StyledLocation>
-		// 	</StyledInfo>
-		// </StyledContainer>
-		<JobView job={job} />
+		<>
+			<StyledContainer
+				onClick={() => {
+					setSelectedJob(job.id);
+				}}>
+				<StyledLogoContainer bgColor={job.logoBackground}>
+					<StyledLogo src={`src/${job.logo}`} />
+				</StyledLogoContainer>
+				<StyledInfo>
+					<StyledDetails>
+						{job.postedAt} <StyledDot contract={job.contract} /> {job.contract}
+					</StyledDetails>
+					<StyledTitle>{job.position}</StyledTitle>
+					<StyledCompanyName>{job.company}</StyledCompanyName>
+					<StyledLocation>{job.location}</StyledLocation>
+				</StyledInfo>
+			</StyledContainer>
+		</>
 	);
 };
 

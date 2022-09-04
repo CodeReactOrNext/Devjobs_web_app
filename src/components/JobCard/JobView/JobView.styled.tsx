@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 
-// background-color: ${({ theme }) => theme.boxBackground};
-
-export const StyledJobViewContainer = styled.section`
+export const StyledJobViewBackdrop = styled.div`
 	top: 0;
 	bottom: 0;
-	margin: 120px auto auto auto;
 	position: absolute;
 	left: 0;
 	right: 0;
+	z-index: 500;
+	width: 100%;
+	max-width: 100%;
+	height: 170%;
+	display: flex;
+	align-items: center;
+`;
+
+export const StyledJobViewContainer = styled.section`
+position: relative;
+	margin: 120px auto auto auto;
 	width: 90%;
-    max-width: 750px;
-	min-height: auto;
+	max-width: 750px;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -49,8 +57,8 @@ export const StyledJobViewHeaderContent = styled.div`
 `;
 
 export const StyledJobViewDetailsContainer = styled.div`
-    height: 100%;
-    width: 75%;
+	height: 100%;
+	width: 75%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -69,8 +77,8 @@ export const StyledJobViewDetails = styled.div`
 	flex-direction: column;
 	gap: 0.75rem;
 	align-items: center;
-    @media screen and (min-width: 800px) {
-        align-items: start;
+	@media screen and (min-width: 800px) {
+		align-items: start;
 	} ;
 `;
 
@@ -112,8 +120,82 @@ export const StyledLogoContainer = styled.div<{ bgColor: string }>`
 `;
 
 export const StyledJobViewContent = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	position: relative;
 	width: 100%;
-	height: 10rem;
+	height: auto;
 	background-color: ${({ theme }) => theme.boxBackground};
+	padding: 1.5rem;
+	border-radius: 0.25rem;
+`;
+
+export const StyledJobViewContentHeader = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: ${({ theme }) => theme.boxBackground};
+`;
+
+export const StyledJobViewContentDetailsContainer = styled.div`
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	@media screen and (min-width: 650px) {
+		align-items: center;
+		flex-direction: row;
+	} ;
+`;
+
+export const StyledJobViewContentDetails = styled.div`
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	@media screen and (min-width: 650px) {
+		height: 100%;
+		width: 300%;
+	} ;
+`;
+
+export const StyledJobViewInfo = styled.p`
+	color: ${({ theme }) => theme.regularText};
+`;
+
+export const StyledJobRequirementText = styled.h2`
+	color: ${({ theme }) => theme.headingText};
+	font-size: 2rem;
+	font-weight: 600;
+`;
+
+export const StyledJobViewRequirements = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	padding-left: 1rem;
+`;
+
+export const StyledJobRequirement = styled.li`
+	color: ${({ theme }) => theme.regularText};
+	align-items: center;
+	justify-content: start;
+	display: flex;
+	width: 100%;
+	gap: 1rem;
+`;
+
+export const StyledRequirementDot = styled.div`
+	padding-left: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: ${({ theme }) => theme.regularText};
+`;
+
+export const StyledRoleItemIndex = styled.p`
+	color: ${({ theme }) => theme.themeColor};
+	padding-left: 4px;
+	font-weight: 600;
 `;
