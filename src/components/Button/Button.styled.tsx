@@ -5,7 +5,7 @@ import { ButtonProps } from '../../types/types';
 export const Button = styled.button<ButtonProps>`
 	border: none;
 	border-radius: 5px;
-	width: 141px;
+	width: ${props => (props.width === 'full' ? '100%' : '141px')};
 	height: 48px;
 	background-color: ${({ theme }) => theme.themeColor};
 	cursor: pointer;

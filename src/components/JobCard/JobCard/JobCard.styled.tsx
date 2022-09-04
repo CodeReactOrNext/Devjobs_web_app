@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
+	cursor: pointer;
 	position: relative;
 	background-color: ${({ theme }) => theme.boxBackground};
 	border-radius: 6px;
