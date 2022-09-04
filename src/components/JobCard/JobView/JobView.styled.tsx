@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledJobViewBackdrop = styled.div`
-	top: 0;
+	top: 150px;
 	bottom: 0;
 	position: absolute;
 	left: 0;
 	right: 0;
-	z-index: 500;
 	width: 100%;
 	max-width: 100%;
 	height: 170%;
@@ -15,7 +14,8 @@ export const StyledJobViewBackdrop = styled.div`
 `;
 
 export const StyledJobViewContainer = styled.section`
-position: relative;
+	position: relative;
+	top: -150px;
 	margin: 120px auto auto auto;
 	width: 90%;
 	max-width: 750px;
