@@ -12,7 +12,7 @@ import {
 } from './SearchField.styled';
 
 import SearchIcon from './SearchIcon';
-import LocationIcon from './LocationIcon';
+import LocationIcon from './icon/LocationIcon';
 import { useContext, useRef, useState } from 'react';
 import FilterContext from '../../contexts/filter-context';
 import Modal from '../UI/Modal/Modal';

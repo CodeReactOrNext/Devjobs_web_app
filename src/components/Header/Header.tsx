@@ -5,7 +5,6 @@ import {
 } from './Header.styled';
 import logo from '../../assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
-import Button from '../UI/Button/Button';
 import SearchField from '../SearchField/SearchField';
 interface Props {
 	darkModeHandler: () => void;

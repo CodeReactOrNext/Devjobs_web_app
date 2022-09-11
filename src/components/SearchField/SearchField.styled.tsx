@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FilterIcon from './FilterIcon';
+import FilterIcon from './icon/FilterIcon';
 
 export const StyledContainer = styled.div`
 	position: absolute;

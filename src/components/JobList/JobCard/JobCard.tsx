@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import JobViewContext from '../../contexts/jobView-context';
-import { Job } from '../../types/JobCard.type';
+import JobViewContext from '../../../contexts/jobView-context';
+import { Job } from '../../../types/JobCard.type';
 import {
 	StyledCompanyName,
 	StyledContainer,

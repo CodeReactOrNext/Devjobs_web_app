@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import JobViewContext from '../../../contexts/jobView-context';
 import { Job } from '../../../types/JobCard.type';
 import Button from '../../UI/Button/Button';
-import { StyledDetails, StyledDot, StyledLocation, StyledTitle } from '../JobCard.styled';
+import { StyledDetails, StyledDot, StyledLocation, StyledTitle } from '../JobCard/JobCard.styled';
 import {
 	StyledButtonContainer,
 	StyledJobRequirement,
