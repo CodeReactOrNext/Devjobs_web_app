@@ -1,5 +1,5 @@
 import { StyledButton } from './Button.styled';
-import { ButtonProps } from '../../types/types';
+import { ButtonProps } from '../../../types/ButtonProps.type';
 
 const Button = ({ children, variant, onClick, width }: ButtonProps) => {
 	return (

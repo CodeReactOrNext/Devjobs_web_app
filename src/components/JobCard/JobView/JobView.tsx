@@ -1,9 +1,9 @@
 import JobsData from '../../../data/data.json';
 import { useContext } from 'react';
 import JobViewContext from '../../../contexts/jobView-context';
-import { Job } from '../../../types/JobCard';
-import Button from '../../Button/Button';
-import { StyledDetails, StyledDot, StyledLocation, StyledTitle } from '../JobCard/JobCard.styled';
+import { Job } from '../../../types/JobCard.type';
+import Button from '../../UI/Button/Button';
+import { StyledDetails, StyledDot, StyledLocation, StyledTitle } from '../JobCard.styled';
 import {
 	StyledButtonContainer,
 	StyledJobRequirement,

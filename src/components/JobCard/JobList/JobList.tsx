@@ -1,8 +1,8 @@
 import JobsData from '../../../data/data.json';
-import JobCard from '../JobCard/JobCard';
+import JobCard from '../JobCard';
 import { StyledJobsContainer, StyledJobsList } from './JobList.styled';
 import { useContext, useState } from 'react';
-import Button from '../../Button/Button';
+import Button from '../../UI/Button/Button';
 import FilterContext from '../../../contexts/filter-context';
 import JobViewContext from '../../../contexts/jobView-context';
 import JobView from '../JobView/JobView';
