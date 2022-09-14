@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ThemeType } from '../../App';
+import { ThemeType } from '../App';
 
 interface NewThemeType extends ThemeType {
 	themeMode: string;

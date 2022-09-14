@@ -1,11 +1,11 @@
-import JobsData from '../../../data/data.json';
-import JobCard from '../JobCard/JobCard';
+import JobsData from '../../data/data.json';
+import JobCard from './JobCard/JobCard';
 import { StyledJobsContainer, StyledJobsList } from './JobList.styled';
 import { useContext, useState } from 'react';
-import Button from '../../Button/Button';
-import FilterContext from '../../../contexts/filter-context';
-import JobViewContext from '../../../contexts/jobView-context';
-import JobView from '../JobView/JobView';
+import Button from '../UI/Button/Button';
+import FilterContext from '../../contexts/filter-context';
+import JobViewContext from '../../contexts/jobView-context';
+import JobView from './JobView/JobView';
 
 const JobList = () => {
 	const [loadMore, setLoadMore] = useState<number>(12);
