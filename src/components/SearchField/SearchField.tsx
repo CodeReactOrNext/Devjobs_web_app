@@ -16,7 +16,6 @@ import LocationIcon from './icon/LocationIcon';
 import { useContext, useRef, useState } from 'react';
 import FilterContext from '../../contexts/filter-context';
 import Modal from '../UI/Modal/Modal';
-import JobViewContext from '../../contexts/jobView-context';
 import Input from '../UI/Input/Input';
 import Checkbox from '../UI/CheckBox/Checkbox';
 
@@ -31,7 +30,6 @@ const SearchField = () => {
 	const [backdropVisible, setBackdropVisible] = useState(false);
 	const byTitleValueRef = useRef<HTMLInputElement>(null);
 	const byLocationValueRef = useRef<HTMLInputElement>(null);
-	const { selectedJob } = useContext(JobViewContext);
 
 	const searchHandler = () => {
 		if (byTitleValueRef.current) {
@@ -47,79 +45,77 @@ const SearchField = () => {
 
 	return (
 		<>
-			{selectedJob === null && (
-				<StyledContainer>
-					<StyledSearchForm>
-						<StyledFilterFieldContainer>
+			<StyledContainer>
+				<StyledSearchForm>
+					<StyledFilterFieldContainer>
+						<SearchIcon />
+						<Input ref={byTitleValueRef} placeholder='Filter by title...' />
+					</StyledFilterFieldContainer>
+					<StyledFilterFieldContainer mobile='mobile'>
+						<LocationIcon />
+						<Input ref={byLocationValueRef} placeholder='Filter by location...' />
+					</StyledFilterFieldContainer>
+					<StyledButtonContainer>
+						<StyledFilterButton
+							onClick={(e) => {
+								e.preventDefault();
+								console.log(e);
+								setBackdropVisible(true);
+							}}
+						>
+							<StyledFilterIcon />
+						</StyledFilterButton>
+						<StyledFullTimeCheckboxContainer mobile='mobile'>
+							<Checkbox
+								onClick={byFullTimeCheckboxHandler}
+								checked={filterByFullTime}
+								name='FullTime'
+								id='#fulltime'
+							/>
+
+							<CheckboxText>Full Time</CheckboxText>
+						</StyledFullTimeCheckboxContainer>
+						<StyledSearchButton
+							onClick={(e) => {
+								e.preventDefault();
+								searchHandler();
+							}}
+						>
+							<StyledButtonText>Search</StyledButtonText>
 							<SearchIcon />
-							<Input ref={byTitleValueRef} placeholder='Filter by title...' />
-						</StyledFilterFieldContainer>
-						<StyledFilterFieldContainer mobile='mobile'>
-							<LocationIcon />
-							<Input ref={byLocationValueRef} placeholder='Filter by location...' />
-						</StyledFilterFieldContainer>
-						<StyledButtonContainer>
-							<StyledFilterButton
-								onClick={(e) => {
-									e.preventDefault();
-									console.log(e);
-									setBackdropVisible(true);
-								}}
-							>
-								<StyledFilterIcon />
-							</StyledFilterButton>
-							<StyledFullTimeCheckboxContainer mobile='mobile'>
+						</StyledSearchButton>
+					</StyledButtonContainer>
+				</StyledSearchForm>
+
+				{backdropVisible && (
+					<Modal backdropHandler={setBackdropVisible}>
+						<>
+							<StyledFilterFieldContainer modal>
+								<LocationIcon />
+								<Input ref={byLocationValueRef} placeholder='Filter by location...' />
+							</StyledFilterFieldContainer>
+							<StyledFullTimeCheckboxContainer modal>
 								<Checkbox
 									onClick={byFullTimeCheckboxHandler}
 									checked={filterByFullTime}
 									name='FullTime'
 									id='#fulltime'
 								/>
-
-								<CheckboxText>Full Time</CheckboxText>
+								<CheckboxText>Full Time Only</CheckboxText>
 							</StyledFullTimeCheckboxContainer>
 							<StyledSearchButton
 								onClick={(e) => {
 									e.preventDefault();
 									searchHandler();
+									setBackdropVisible(false);
 								}}
 							>
-								<StyledButtonText>Search</StyledButtonText>
-								<SearchIcon />
+								<StyledButtonText modal>Search</StyledButtonText>
 							</StyledSearchButton>
-						</StyledButtonContainer>
-					</StyledSearchForm>
-
-					{backdropVisible && (
-						<Modal backdropHandler={setBackdropVisible}>
-							<>
-								<StyledFilterFieldContainer modal>
-									<LocationIcon />
-									<Input ref={byLocationValueRef} placeholder='Filter by location...' />
-								</StyledFilterFieldContainer>
-								<StyledFullTimeCheckboxContainer modal>
-									<Checkbox
-										onClick={byFullTimeCheckboxHandler}
-										checked={filterByFullTime}
-										name='FullTime'
-										id='#fulltime'
-									/>
-									<CheckboxText>Full Time Only</CheckboxText>
-								</StyledFullTimeCheckboxContainer>
-								<StyledSearchButton
-									onClick={(e) => {
-										e.preventDefault();
-										searchHandler();
-										setBackdropVisible(false);
-									}}
-								>
-									<StyledButtonText modal>Search</StyledButtonText>
-								</StyledSearchButton>
-							</>
-						</Modal>
-					)}
-				</StyledContainer>
-			)}
+						</>
+					</Modal>
+				)}
+			</StyledContainer>
 		</>
 	);
 };
