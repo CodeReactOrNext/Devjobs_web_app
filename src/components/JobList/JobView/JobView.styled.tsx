@@ -1,22 +1,23 @@
 import styled from 'styled-components';
 
 export const StyledJobViewBackdrop = styled.div`
-	top: 150px;
+	margin-top: -25px;
 	bottom: 0;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	width: 100%;
 	max-width: 100%;
-	height: 170%;
+	height: 100%;
 	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	align-items: center;
+	justify-content: center;
 `;
 
 export const StyledJobViewContainer = styled.section`
 	position: relative;
-	top: -150px;
-	margin: 120px auto auto auto;
 	width: 90%;
 	max-width: 750px;
 	height: auto;
@@ -32,10 +33,10 @@ export const StyledJobViewHeader = styled.header`
 	height: 12.5rem;
 	background-color: ${({ theme }) => theme.boxBackground};
 	border-radius: 0.25rem;
+	overflow: hidden;
 
 	@media screen and (min-width: 800px) {
 		height: 8.75rem;
-		border-radius: 0;
 	} ;
 `;
 
@@ -199,3 +200,49 @@ export const StyledRoleItemIndex = styled.p`
 	padding-left: 4px;
 	font-weight: 600;
 `;
+
+export const StyledJobViewFooter = styled.footer`
+	width: 100%;
+	height: 100px;
+	background-color: ${({ theme }) => theme.boxBackground};
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
+
+export const StyledFooterContent = styled.div`
+	width: 90%;
+	max-width: 750px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media screen and (min-width: 650px) {
+		
+	} ;
+`
+
+export const StyledFooterButtonContainer = styled.div`
+	width: 100%;
+
+	@media screen and (min-width: 650px) {
+	width: 30%;	
+	} ;
+`
+
+export const StyledFooterDetails = styled.div`
+	display: none;
+
+	@media screen and (min-width: 650px) {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	};
+
+`
+
+export const StyledFooterSecondaryText = styled.p`
+color: ${({ theme }) => theme.regularText};
+
+`
