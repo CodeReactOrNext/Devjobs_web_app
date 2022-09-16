@@ -1,6 +1,5 @@
-import { useContext } from 'react';
-import JobViewContext from '../../../contexts/jobView-context';
 import { Job } from '../../../types/JobCard.type';
+
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -11,6 +10,7 @@ import {
 	StyledLogo,
 	StyledLogoContainer,
 	StyledTitle,
+	StyledLink,
 } from './JobCard.styled';
 
 type Props = {
@@ -18,14 +18,9 @@ type Props = {
 };
 
 const JobCard = ({ job }: Props) => {
-	const { selectedJob, setSelectedJob } = useContext(JobViewContext);
-
 	return (
-		<>
-			<StyledContainer
-				onClick={() => {
-					setSelectedJob(job.id);
-				}}>
+		<StyledLink to={`jobs/${job.id}`}>
+			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
 					<StyledLogo src={`src/${job.logo}`} />
 				</StyledLogoContainer>
@@ -38,7 +33,7 @@ const JobCard = ({ job }: Props) => {
 					<StyledLocation>{job.location}</StyledLocation>
 				</StyledInfo>
 			</StyledContainer>
-		</>
+		</StyledLink>
 	);
 };
 

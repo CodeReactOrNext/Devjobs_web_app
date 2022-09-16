@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { ThemeType } from './App';
+import { ThemeType } from './contexts/theme-context';
 
 export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 *{box-sizing: border-box;}
@@ -54,6 +54,6 @@ table {
     font-size: 16px;
     line-height: 26px;
     height:100vh;
-	background-color: ${props => props.theme.mainBackground};
+	background-color: ${(props) => props.theme.mainBackground};
   }
 `;

@@ -1,28 +1,27 @@
 import {
-  StyledDarkModeToggle,
-  StyledDarkModeButton,
-  StyledDarkModeButtonDot,
-  StyledSunIcon,
-  StyledMoonIcon,
+	StyledDarkModeToggle,
+	StyledDarkModeButton,
+	StyledDarkModeButtonDot,
+	StyledSunIcon,
+	StyledMoonIcon,
 } from './DarkModeToggle.styled';
-
 import sunIcon from '../../../assets/desktop/icon-sun.svg';
 import moonIcon from '../../../assets/desktop/icon-moon.svg';
+import ThemeContext from '../../../contexts/theme-context';
+import { useContext } from 'react';
 
-interface Props {
-  darkModeHandler: () => void;
-}
+const DarkModeToggle = () => {
+	const { darkModeHandler } = useContext(ThemeContext);
 
-const DarkModeToggle = ({ darkModeHandler }: Props) => {
-  return (
-    <StyledDarkModeToggle>
-      <StyledSunIcon src={sunIcon}></StyledSunIcon>
-      <StyledDarkModeButton onClick={darkModeHandler}>
-        <StyledDarkModeButtonDot></StyledDarkModeButtonDot>
-      </StyledDarkModeButton>
-      <StyledMoonIcon src={moonIcon}></StyledMoonIcon>
-    </StyledDarkModeToggle>
-  );
+	return (
+		<StyledDarkModeToggle>
+			<StyledSunIcon src={sunIcon} />
+			<StyledDarkModeButton onClick={() => darkModeHandler()}>
+				<StyledDarkModeButtonDot />
+			</StyledDarkModeButton>
+			<StyledMoonIcon src={moonIcon} />
+		</StyledDarkModeToggle>
+	);
 };
 
 export default DarkModeToggle;

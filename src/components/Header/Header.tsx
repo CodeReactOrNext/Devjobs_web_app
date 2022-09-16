@@ -6,17 +6,14 @@ import {
 import logo from '../../assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
 import SearchField from '../SearchField/SearchField';
-interface Props {
-	darkModeHandler: () => void;
-}
 
-const Header = ({ darkModeHandler }: Props) => {
+const Header = ({ searchFieldShow }: { searchFieldShow: boolean }) => {
 	return (
 		<StyledHeader>
 			<StyledHeaderContainer>
 				<StyledLogo src={logo} />
-				<DarkModeToggle darkModeHandler={darkModeHandler} />
-				<SearchField />
+				<DarkModeToggle />
+				{searchFieldShow && <SearchField />}
 			</StyledHeaderContainer>
 		</StyledHeader>
 	);
