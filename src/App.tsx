@@ -1,13 +1,9 @@
-import Header from './components/Header/Header';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './global.css';
-import { theme } from './themes/theme';
-import useDarkMode from './hooks/useDarkMode';
 import { FilterContextProvider } from './contexts/filter-context';
 import MainPage from './components/Pages/MainPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import JobViewPage from './components/Pages/JobViewPage';
-
 import { useContext } from 'react';
 import ThemeContext from './contexts/theme-context';
 
@@ -16,7 +12,7 @@ function App() {
 
 	return (
 		<ThemeProvider theme={newTheme}>
-			<div id='backdrop'></div>
+			<div id='backdrop' />
 			<FilterContextProvider>
 				<GlobalStyle />
 				<BrowserRouter>

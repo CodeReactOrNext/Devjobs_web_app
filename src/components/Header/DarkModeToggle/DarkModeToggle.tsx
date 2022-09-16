@@ -5,7 +5,6 @@ import {
 	StyledSunIcon,
 	StyledMoonIcon,
 } from './DarkModeToggle.styled';
-
 import sunIcon from '../../../assets/desktop/icon-sun.svg';
 import moonIcon from '../../../assets/desktop/icon-moon.svg';
 import ThemeContext from '../../../contexts/theme-context';
@@ -16,11 +15,11 @@ const DarkModeToggle = () => {
 
 	return (
 		<StyledDarkModeToggle>
-			<StyledSunIcon src={sunIcon}></StyledSunIcon>
+			<StyledSunIcon src={sunIcon} />
 			<StyledDarkModeButton onClick={() => darkModeHandler()}>
-				<StyledDarkModeButtonDot></StyledDarkModeButtonDot>
+				<StyledDarkModeButtonDot />
 			</StyledDarkModeButton>
-			<StyledMoonIcon src={moonIcon}></StyledMoonIcon>
+			<StyledMoonIcon src={moonIcon} />
 		</StyledDarkModeToggle>
 	);
 };

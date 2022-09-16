@@ -10,31 +10,32 @@ const JobList = () => {
 	const { filterByTitle, filterByLocation, filterByFullTime } =
 		useContext(FilterContext);
 
+	const buttonHandler = () => {
+		loadMore === 12 ? setLoadMore(16) : setLoadMore(12);
+	};
+
 	return (
-	
-			<StyledJobsContainer>
-				<>
-					<StyledJobsList>
-						{JobsData.filter((job) => {
-							const filterText =
-								job.position.toLowerCase().includes(filterByTitle) &&
-								job.location.toLowerCase().includes(filterByLocation);
-							if (filterByFullTime) {
-								return filterText && job.contract === 'Full Time';
-							} else return filterText;
-						}).map((job, index) => {
-							if (index < loadMore) {
-								return <JobCard key={job.id} job={job} />;
-							}
-						})}
-					</StyledJobsList>
-					<Button onClick={() => (loadMore === 12 ? setLoadMore(16) : setLoadMore(12))}>
-						{loadMore === 12 ? 'Load more' : 'Load less'}
-					</Button>
-				</>
-			</StyledJobsContainer>
-			
-		
+		<StyledJobsContainer>
+			<>
+				<StyledJobsList>
+					{JobsData.filter((job) => {
+						const filterText =
+							job.position.toLowerCase().includes(filterByTitle) &&
+							job.location.toLowerCase().includes(filterByLocation);
+						if (filterByFullTime) {
+							return filterText && job.contract === 'Full Time';
+						} else return filterText;
+					}).map((job, index) => {
+						if (index < loadMore) {
+							return <JobCard key={job.id} job={job} />;
+						}
+					})}
+				</StyledJobsList>
+				<Button onClick={() => buttonHandler()}>
+					{loadMore === 12 ? 'Load more' : 'Load less'}
+				</Button>
+			</>
+		</StyledJobsContainer>
 	);
 };
 

@@ -7,7 +7,7 @@ import logo from '../../assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
 import SearchField from '../SearchField/SearchField';
 
-const Header = ({ searchFieldShow }: {searchFieldShow : boolean}) => {
+const Header = ({ searchFieldShow }: { searchFieldShow: boolean }) => {
 	return (
 		<StyledHeader>
 			<StyledHeaderContainer>
