@@ -128,6 +128,7 @@ export const StyledButtonContainer = styled.div`
   align-items: center;
   gap: 0.625rem;
   @media (max-width: 769px) {
+    flex-direction: row-reverse;
     justify-content: flex-end;
   }
 `;
