@@ -94,7 +94,6 @@ export const StyledFilterFieldContainer = styled.div<{
   gap: 1rem;
   padding-bottom: ${({ modal }) => (modal ? '24px' : '0')};
   padding-left: ${({ modal }) => (modal ? '0' : '24px')};
-
   align-items: center;
   svg {
     overflow: visible;
