@@ -94,7 +94,6 @@ export const StyledFilterFieldContainer = styled.div<{
   gap: 1rem;
   padding-bottom: ${({ modal }) => (modal ? '24px' : '0')};
   padding-left: ${({ modal }) => (modal ? '0' : '24px')};
-
   align-items: center;
   svg {
     overflow: visible;
@@ -128,6 +127,7 @@ export const StyledButtonContainer = styled.div`
   align-items: center;
   gap: 0.625rem;
   @media (max-width: 769px) {
+    flex-direction: row-reverse;
     justify-content: flex-end;
   }
 `;
