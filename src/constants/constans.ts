@@ -1,0 +1,3 @@
+const JOB_LIST_SHOWING_ITEMS = 12;
+
+export { JOB_LIST_SHOWING_ITEMS };
