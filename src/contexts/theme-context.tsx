@@ -1,31 +1,30 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 import { theme } from '../themes/theme';
-import FilterContext from './filter-context';
 
 type Props = {
 	children?: React.ReactNode;
 };
 interface ThemeContextType {
 	newTheme: ThemeType;
-	setThemeMode: React.Dispatch<React.SetStateAction<string>>;
+	darkModeHandler: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType>({
 	newTheme: theme,
-	setThemeMode: () => {},
+	darkModeHandler: () => {},
 });
 
 export type ThemeType = typeof theme;
 
 export const ThemeContextProvider = ({ children }: Props) => {
-	const [newTheme, setThemeMode] = useDarkMode(theme);
+	const [newTheme, darkModeHandler] = useDarkMode(theme);
 
 	return (
 		<ThemeContext.Provider
 			value={{
 				newTheme,
-				setThemeMode,
+				darkModeHandler,
 			}}
 		>
 			{children}

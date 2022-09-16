@@ -11,19 +11,13 @@ import moonIcon from '../../../assets/desktop/icon-moon.svg';
 import ThemeContext from '../../../contexts/theme-context';
 import { useContext } from 'react';
 
-interface Props {
-	darkModeHandler: () => void;
-}
-
 const DarkModeToggle = () => {
-	const { setThemeMode } = useContext(ThemeContext);
-	const darkModeHandler = () => {
-		setThemeMode;
-	};
+	const { darkModeHandler } = useContext(ThemeContext);
+
 	return (
 		<StyledDarkModeToggle>
 			<StyledSunIcon src={sunIcon}></StyledSunIcon>
-			<StyledDarkModeButton onClick={darkModeHandler}>
+			<StyledDarkModeButton onClick={() => darkModeHandler()}>
 				<StyledDarkModeButtonDot></StyledDarkModeButtonDot>
 			</StyledDarkModeButton>
 			<StyledMoonIcon src={moonIcon}></StyledMoonIcon>
