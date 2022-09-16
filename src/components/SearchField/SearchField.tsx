@@ -33,10 +33,10 @@ const SearchField = () => {
 
   const searchHandler = () => {
     if (byTitleValueRef.current) {
-      setFilterByTitle(byTitleValueRef.current.value);
+      setFilterByTitle(byTitleValueRef.current.value.toLowerCase());
     }
     if (byLocationValueRef.current) {
-      setFilterByLocation(byLocationValueRef.current.value);
+      setFilterByLocation(byLocationValueRef.current.value.toLowerCase());
     }
   };
   const byFullTimeCheckboxHandler = () => {
