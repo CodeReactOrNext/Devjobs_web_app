@@ -64,7 +64,7 @@ const JobView = () => {
 								<StyledJobViewContentDetailsContainer>
 									<StyledJobViewContentDetails>
 										<StyledDetails>
-											{job.postedAt} <StyledDot contract={'Full Time'} /> {job.contract}
+											{job.postedAt} <StyledDot contract={job.contract} /> {job.contract}
 										</StyledDetails>
 										<StyledTitle>{job.position}</StyledTitle>
 										<StyledLocation>{job.location}</StyledLocation>

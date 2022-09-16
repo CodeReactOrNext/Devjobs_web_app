@@ -62,6 +62,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledDetails = styled.div`
+	height: 25px;
 	display: flex;
 	gap: 8px;
 	font-size: 16px;
