@@ -11,6 +11,10 @@ import {
 } from '../JobCard/JobCard.styled';
 import {
 	StyledButtonContainer,
+	StyledFooterButtonContainer,
+	StyledFooterContent,
+	StyledFooterDetails,
+	StyledFooterSecondaryText,
 	StyledJobRequirement,
 	StyledJobRequirementText,
 	StyledJobViewBackdrop,
@@ -22,6 +26,7 @@ import {
 	StyledJobViewContentHeader,
 	StyledJobViewDetails,
 	StyledJobViewDetailsContainer,
+	StyledJobViewFooter,
 	StyledJobViewHeader,
 	StyledJobViewHeaderContent,
 	StyledJobViewInfo,
@@ -39,7 +44,7 @@ const JobView = () => {
 	const jobViewData = JobsData.filter((item) => item.id === Number(id!));
 
 	return (
-		<Link to='/'>
+		<Link to='/' style={{ textDecoration: 'none' }}>
 			{jobViewData.map((job) => (
 				<StyledJobViewBackdrop key={job.id}>
 					<StyledJobViewContainer onClick={(e) => e.stopPropagation()}>
@@ -64,7 +69,7 @@ const JobView = () => {
 								<StyledJobViewContentDetailsContainer>
 									<StyledJobViewContentDetails>
 										<StyledDetails>
-											{job.postedAt} <StyledDot contract={'Full Time'} /> {job.contract}
+											{job.postedAt} <StyledDot contract={job.contract} /> {job.contract}
 										</StyledDetails>
 										<StyledTitle>{job.position}</StyledTitle>
 										<StyledLocation>{job.location}</StyledLocation>
@@ -93,6 +98,17 @@ const JobView = () => {
 							))}
 						</StyledJobViewContent>
 					</StyledJobViewContainer>
+						<StyledJobViewFooter>
+							<StyledFooterContent>
+								<StyledFooterDetails>
+								<StyledJobViewCompany>{job.company}</StyledJobViewCompany>
+								<StyledFooterSecondaryText>So Digital Inc.</StyledFooterSecondaryText>
+								</StyledFooterDetails>
+								<StyledFooterButtonContainer>
+									<Button width='full'>Apply now</Button>
+								</StyledFooterButtonContainer>
+							</StyledFooterContent>
+						</StyledJobViewFooter>
 				</StyledJobViewBackdrop>
 			))}
 		</Link>
