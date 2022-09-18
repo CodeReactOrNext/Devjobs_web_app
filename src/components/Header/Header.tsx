@@ -4,8 +4,8 @@ import {
 	StyledLogo,
 } from './Header.styled';
 import logo from '../../assets/desktop/logo.svg';
-import DarkModeToggle from './DarkModeToggle/DarkModeToggle';
-import SearchField from '../SearchField/SearchField';
+import DarkModeToggle from './DarkModeToggle';
+import SearchField from '../SearchField';
 
 const Header = ({ searchFieldShow }: { searchFieldShow: boolean }) => {
 	return (

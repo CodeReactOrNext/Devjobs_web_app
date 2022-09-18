@@ -1,4 +1,4 @@
-export type CheckboxType = {
+export type CheckboxProps = {
 	name: string;
 	id: string;
 	checked: boolean;

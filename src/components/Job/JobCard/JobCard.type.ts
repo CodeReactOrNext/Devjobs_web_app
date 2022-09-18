@@ -1,4 +1,4 @@
-export type Job = {
+export type JobProps = {
     id: number;
 	position: string;
 	logo: string;

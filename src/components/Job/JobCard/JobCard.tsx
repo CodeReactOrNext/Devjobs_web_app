@@ -1,5 +1,3 @@
-import { Job } from '../../../types/JobCard.type';
-
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -12,12 +10,9 @@ import {
 	StyledTitle,
 	StyledLink,
 } from './JobCard.styled';
+import { JobProps } from './JobCard.type';
 
-type Props = {
-	job: Job;
-};
-
-const JobCard = ({ job }: Props) => {
+const JobCard = ({ job }: {job : JobProps}) => {
 	return (
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>

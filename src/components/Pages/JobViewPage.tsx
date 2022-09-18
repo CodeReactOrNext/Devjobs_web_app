@@ -1,6 +1,6 @@
 
-import Header from '../Header/Header';
-import JobView from '../JobList/JobView/JobView';
+import Header from '../Header';
+import JobView from '../Job/JobView';
 
 function JobViewPage() {
 	return (

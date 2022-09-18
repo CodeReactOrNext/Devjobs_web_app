@@ -10,14 +10,11 @@ import {
   StyledSearchForm,
   StyledFilterIcon,
 } from './SearchField.styled';
-
 import SearchIcon from './SearchIcon';
 import LocationIcon from './icon/LocationIcon';
 import { useContext, useRef, useState } from 'react';
 import FilterContext from '../../contexts/filter-context';
-import Modal from '../UI/Modal/Modal';
-import Input from '../UI/Input/Input';
-import Checkbox from '../UI/CheckBox/Checkbox';
+import { Modal, Checkbox, Input } from '../UI';
 
 const SearchField = () => {
   const {

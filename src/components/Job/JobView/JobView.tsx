@@ -1,7 +1,4 @@
 import JobsData from '../../../data/data.json';
-import { useContext, useEffect } from 'react';
-
-import { Job } from '../../../types/JobCard.type';
 import Button from '../../UI/Button/Button';
 import {
 	StyledDetails,
