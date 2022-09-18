@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import styled from 'styled-components';
-import { ButtonProps } from '../../../types/ButtonProps.type';
+import { ButtonProps } from './Button.type';
 
 export const Button = styled.button<ButtonProps>`
 	border: none;

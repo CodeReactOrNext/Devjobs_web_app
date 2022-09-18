@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { StyledInput } from './Input.styled';
-import { RefInputType, InputPropsType } from '../../../types';
+import { InputPropsType, RefInputType } from './Input.type';
 
 const Input = forwardRef<RefInputType, InputPropsType>(
 	({ placeholder }, ref) => <StyledInput ref={ref} placeholder={placeholder} />
