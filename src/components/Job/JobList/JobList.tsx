@@ -1,10 +1,9 @@
-
 import { StyledJobsContainer, StyledJobsList } from './JobList.styled';
 import {  useState } from 'react';
 import { Button } from '../../UI';
 
-import { JOB_LIST_SHOWING_ITEMS } from '../../../constants/constans';
-import useJobDataFilter from '../../../hooks/useJobDataFilter';
+import { JOB_LIST_SHOWING_ITEMS } from 'constants/constans';
+import useJobDataFilter from 'hooks/useJobDataFilter';
 import { buttonHandler } from './helpers/buttonHandler';
 
 const JobList = () => {

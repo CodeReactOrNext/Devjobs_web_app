@@ -1,11 +1,11 @@
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './global.css';
-import { FilterContextProvider } from './contexts/filter-context';
-import MainPage from './components/Pages/MainPage';
+import { FilterContextProvider } from 'contexts/filter-context';
+import MainPage from 'Pages/MainPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import JobViewPage from './components/Pages/JobViewPage';
+import JobViewPage from 'Pages/JobViewPage';
 import { useContext } from 'react';
-import ThemeContext from './contexts/theme-context';
+import ThemeContext from 'contexts/theme-context';
 
 function App() {
 	const { newTheme } = useContext(ThemeContext);

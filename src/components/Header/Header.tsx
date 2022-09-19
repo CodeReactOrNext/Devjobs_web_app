@@ -3,9 +3,9 @@ import {
 	StyledHeaderContainer,
 	StyledLogo,
 } from './Header.styled';
-import logo from '../../assets/desktop/logo.svg';
+import logo from 'assets/desktop/logo.svg';
 import DarkModeToggle from './DarkModeToggle';
-import SearchField from '../SearchField';
+import SearchField from 'SearchField/SearchField';
 
 const Header = ({ searchFieldShow }: { searchFieldShow: boolean }) => {
 	return (

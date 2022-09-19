@@ -33,7 +33,6 @@ export const StyledJobViewHeader = styled.header`
 	height: 12.5rem;
 	background-color: ${({ theme }) => theme.boxBackground};
 	border-radius: 0.25rem;
-	overflow: hidden;
 
 	@media screen and (min-width: 800px) {
 		height: 8.75rem;

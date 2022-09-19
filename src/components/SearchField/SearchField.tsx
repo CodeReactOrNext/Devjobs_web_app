@@ -13,7 +13,7 @@ import {
 import SearchIcon from './SearchIcon';
 import LocationIcon from './icon/LocationIcon';
 import { useContext, useRef, useState } from 'react';
-import FilterContext from '../../contexts/filter-context';
+import FilterContext from 'contexts/filter-context';
 import { Modal, Checkbox, Input } from '../UI';
 
 const SearchField = () => {

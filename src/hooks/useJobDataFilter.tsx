@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import JobCard from '../components/Job/JobCard';
-import FilterContext from '../contexts/filter-context';
-import JobsData from '../data/data.json';
+import JobCard from 'Job/JobCard';
+import FilterContext from 'contexts/filter-context';
+import JobsData from 'data/data.json';
 
 const useJobDataFilter = (loadMore: number) => {
   const { filterByTitle, filterByLocation, filterByFullTime } =

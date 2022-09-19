@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import bgHeaderMobile from '../../assets/mobile/bg-pattern-header.svg';
-import bgHeaderTablet from '../../assets/tablet/bg-pattern-header.svg';
-import bgHeaderDesktop from '../../assets/desktop/bg-pattern-header.svg';
+import bgHeaderMobile from 'assets/mobile/bg-pattern-header.svg';
+import bgHeaderTablet from 'assets/tablet/bg-pattern-header.svg';
+import bgHeaderDesktop from 'assets/desktop/bg-pattern-header.svg';
 
 export const StyledHeader = styled.header`
   position: relative;

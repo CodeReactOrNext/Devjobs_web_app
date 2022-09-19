@@ -1,6 +1,5 @@
-
-import Header from '../Header/Header';
-import JobList from '../Job/JobList';
+import Header from "Header/Header";
+import JobList from "Job/JobList";
 
 function MainPage() {
 	return (
