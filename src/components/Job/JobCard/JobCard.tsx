@@ -12,8 +12,7 @@ import {
 } from './JobCard.styled';
 import { JobProps } from './JobCard.type';
 
-const JobCard = ({ job }: {job : JobProps}) => {
-	return (
+const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
@@ -29,7 +28,5 @@ const JobCard = ({ job }: {job : JobProps}) => {
 				</StyledInfo>
 			</StyledContainer>
 		</StyledLink>
-	);
-};
-
+	
 export default JobCard;

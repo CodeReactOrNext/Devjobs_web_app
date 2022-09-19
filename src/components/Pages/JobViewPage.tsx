@@ -1,12 +1,11 @@
 import Header from "Header/Header";
 import JobView from "Job/JobView";
 
-function JobViewPage() {
-	return (
+const JobViewPage = () => 
 		<>
 			<Header searchFieldShow={false} />
 			<JobView />
 		</>
-	);
-}
+	
+
 export default JobViewPage;
