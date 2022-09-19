@@ -7,11 +7,11 @@ export const StyledHeader = styled.header`
   position: relative;
   width: 100%;
   min-height: 136px;
-  background-repeat: no-repeat;
-  background-image: url(${bgHeaderMobile});
-  background-size: cover;
-  background-position: bottom;
   padding: 32px 24px 0 24px;
+  background-image: url(${bgHeaderMobile});
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (min-width: 768px) {
     min-height: 160px;

@@ -3,12 +3,12 @@ import FilterIcon from './icon/FilterIcon';
 
 export const StyledContainer = styled.div`
   position: absolute;
+  right: 0;
   bottom: -40px;
-  padding: 0 24px;
+  left: 0;
   display: flex;
   justify-content: center;
-  left: 0;
-  right: 0;
+  padding: 0 24px;
   @media (min-width: 768px) {
     padding: 0 39px;
   }
@@ -18,20 +18,21 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledSearchForm = styled.form`
-  width: 100%;
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.boxBackground};
+  width: 100%;
+  height: 80px;
   border-radius: 6px;
+  background-color: ${({ theme }) => theme.boxBackground};
+
   @media (min-width: 769px) {
     & > div:nth-child(1):after,
     & > div:nth-child(2):after {
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
-      content: '';
       width: 1px;
       height: 100%;
       background: ${({ theme }) => theme.inputDivider};
@@ -45,8 +46,8 @@ export const StyledSearchButton = styled.button<{ modal?: boolean }>`
   border: none;
   transition: all 0.3s;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.themeColor};
   border-radius: 6px;
+  background-color: ${({ theme }) => theme.themeColor};
   svg {
     fill: ${({ theme }) => theme.basicColor};
     @media (min-width: 769px) {
@@ -62,9 +63,9 @@ export const StyledSearchButton = styled.button<{ modal?: boolean }>`
 `;
 
 export const StyledButtonText = styled.p<{ modal?: boolean }>`
+  padding-top: 4px;
   font-size: 1rem;
   font-weight: 700;
-  padding-top: 4px;
   color: ${({ theme }) => theme.basicColor};
   @media (max-width: 768px) {
     display: ${({ modal }) => (modal ? 'block' : 'none')};
@@ -72,11 +73,11 @@ export const StyledButtonText = styled.p<{ modal?: boolean }>`
 `;
 
 export const StyledFilterButton = styled.button`
+  display: none;
   width: 3rem;
+  height: 3rem;
   border: none;
   background: none;
-  height: 3rem;
-  display: none;
   @media (max-width: 768px) {
     display: block;
   }
@@ -87,14 +88,15 @@ export const StyledFilterFieldContainer = styled.div<{
   modal?: boolean;
 }>`
   position: relative;
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   gap: 1rem;
   padding-bottom: ${({ modal }) => (modal ? '24px' : '0')};
   padding-left: ${({ modal }) => (modal ? '0' : '24px')};
-  align-items: center;
+
   svg {
     overflow: visible;
     fill: ${({ theme }) => theme.themeColor};
@@ -120,11 +122,11 @@ export const StyledFilterFieldContainer = styled.div<{
 `;
 
 export const StyledButtonContainer = styled.div`
-  width: 50%;
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem;
   align-items: center;
+  width: 50%;
+  padding: 1.25rem;
   gap: 0.625rem;
   @media (max-width: 769px) {
     flex-direction: row-reverse;
