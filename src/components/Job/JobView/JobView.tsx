@@ -1,5 +1,5 @@
-import JobsData from '../../../data/data.json';
-import Button from '../../UI/Button/Button';
+import JobsData from 'data/data.json';
+import Button from 'UI/Button/Button';
 import {
 	StyledDetails,
 	StyledDot,

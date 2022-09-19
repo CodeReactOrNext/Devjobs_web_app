@@ -1,6 +1,6 @@
+import useDarkMode from 'hooks/useDarkMode';
 import React, { createContext } from 'react';
-import useDarkMode from '../hooks/useDarkMode';
-import { theme } from '../themes/theme';
+import { theme } from 'themes/theme';
 
 type Props = {
 	children?: React.ReactNode;

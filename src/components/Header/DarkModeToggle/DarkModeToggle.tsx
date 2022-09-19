@@ -5,9 +5,9 @@ import {
 	StyledSunIcon,
 	StyledMoonIcon,
 } from './DarkModeToggle.styled';
-import sunIcon from '../../../assets/desktop/icon-sun.svg';
-import moonIcon from '../../../assets/desktop/icon-moon.svg';
-import ThemeContext from '../../../contexts/theme-context';
+import sunIcon from 'assets/desktop/icon-sun.svg';
+import moonIcon from 'assets/desktop/icon-moon.svg';
+import ThemeContext from 'contexts/theme-context';
 import { useContext } from 'react';
 
 const DarkModeToggle = () => {

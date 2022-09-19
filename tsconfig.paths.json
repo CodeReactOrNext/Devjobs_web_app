@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "assets/*": ["src/assets/*"],
+      "constants/*": ["src/constants/*"],
+      "data/*": ["src/data/*"],
+      "contexts/*": ["src/contexts/*"],
+      "hooks/*": ["src/hooks/*"],
+      "themes/*": ["src/themes/*"],
+      "Header/*": ["src/components/Header/*"],
+      "Job/*": ["src/components/Job/*"],
+      "Pages/*": ["src/components/Pages/*"],
+      "SearchField/*": ["src/components/SearchField/*"],
+      "UI/*": ["src/components/UI/*"]
+    }
+  }
+}

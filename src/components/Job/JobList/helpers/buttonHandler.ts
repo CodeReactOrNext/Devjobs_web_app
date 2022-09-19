@@ -1,4 +1,4 @@
-import { JOB_LIST_SHOWING_ITEMS } from '../../../../constants/constans';
+import { JOB_LIST_SHOWING_ITEMS } from 'constants/constans';
 
 export const buttonHandler = (
   loadMore: number,
