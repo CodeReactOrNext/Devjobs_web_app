@@ -12,11 +12,13 @@ import {
 } from './JobCard.styled';
 import { JobProps } from './JobCard.type';
 
+import logo from 'assets/logos/creative.svg'
+
 const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
-					<StyledLogo src={`src/assets/logos/${job.logo}`} />
+					<StyledLogo src={logo} />
 				</StyledLogoContainer>
 				<StyledInfo>
 					<StyledDetails>
