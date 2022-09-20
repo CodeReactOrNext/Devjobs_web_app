@@ -16,7 +16,7 @@ const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
-					<StyledLogo src={`src/${job.logo}`} />
+					<StyledLogo src={`./src/${job.logo}`} />
 				</StyledLogoContainer>
 				<StyledInfo>
 					<StyledDetails>
