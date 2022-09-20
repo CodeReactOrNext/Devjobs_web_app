@@ -1,3 +1,4 @@
+import { getImageUrl } from 'Job/helpers/GetImageUrl';
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -11,10 +12,6 @@ import {
 	StyledLink,
 } from './JobCard.styled';
 import { JobProps } from './JobCard.type';
-
-function getImageUrl(logo: any): string {
-	return new URL(`/src/assets/logos/${logo}`, import.meta.url).toString()
-  }
 
 const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>

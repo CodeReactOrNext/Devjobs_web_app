@@ -1,3 +1,4 @@
+import { getImageUrl } from 'Job/helpers/GetImageUrl';
 import { JobProps } from 'Job/JobCard/JobCard.type';
 import Button from 'UI/Button';
 import {
@@ -17,7 +18,7 @@ const JobViewHeader = ({ job }: { job: JobProps }) => (
   <StyledJobViewHeader>
     <StyledJobViewHeaderContent>
       <StyledLogoContainer bgColor={job.logoBackground}>
-        <img src={`../src/${job.logo}`} />
+        <img src={getImageUrl(job.logo)} />
       </StyledLogoContainer>
       <StyledJobViewDetailsContainer>
         <StyledJobViewDetails>
