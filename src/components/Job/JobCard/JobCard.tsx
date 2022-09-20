@@ -12,11 +12,15 @@ import {
 } from './JobCard.styled';
 import { JobProps } from './JobCard.type';
 
+function getImageUrl(logo: any): string {
+	return new URL(`/src/assets/logos/${logo}`, import.meta.url).toString()
+  }
+
 const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
-					<StyledLogo src={`src/${job.logo}`} />
+					<StyledLogo src={getImageUrl(job.logo)} />
 				</StyledLogoContainer>
 				<StyledInfo>
 					<StyledDetails>
