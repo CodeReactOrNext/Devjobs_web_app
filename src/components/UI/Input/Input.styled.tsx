@@ -7,10 +7,10 @@ export const StyledInput = styled.input<{
   width: 100%;
   height: 100%;
   border: none;
+  background-color: transparent;
   font-size: 1rem;
   cursor: pointer;
+  outline: none;
   color: ${({ theme }) => theme.headingText};
   caret-color: ${({ theme }) => theme.carret};
-  outline: none;
-  background-color: transparent;
 `;
