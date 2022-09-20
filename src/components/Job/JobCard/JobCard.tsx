@@ -1,3 +1,4 @@
+import { getImageUrl } from 'Job/helpers/GetImageUrl';
 import {
 	StyledCompanyName,
 	StyledContainer,
@@ -16,7 +17,7 @@ const JobCard = ({ job }: {job : JobProps}) =>
 		<StyledLink to={`jobs/${job.id}`}>
 			<StyledContainer>
 				<StyledLogoContainer bgColor={job.logoBackground}>
-					<StyledLogo src={`src/${job.logo}`} />
+					<StyledLogo src={getImageUrl(job.logo)} />
 				</StyledLogoContainer>
 				<StyledInfo>
 					<StyledDetails>
