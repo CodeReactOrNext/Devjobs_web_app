@@ -147,9 +147,7 @@ export const StyledFullTimeCheckboxContainer = styled.div<{
   }
 `;
 
-export const CheckboxText = styled.span<{
-  modal?: boolean;
-}>`
+export const CheckboxText = styled.span`
   font-size: 1rem;
   font-weight: 700;
   white-space: nowrap;
