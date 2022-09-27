@@ -15,6 +15,7 @@ import LocationIcon from './icon/LocationIcon';
 import { useContext, useRef, useState } from 'react';
 import FilterContext from 'contexts/filter-context';
 import { Modal, Checkbox, Input } from '../UI';
+import useWindowDimensions from 'hooks/useWindowDimenstions';
 
 const SearchField = () => {
   const {
@@ -27,6 +28,8 @@ const SearchField = () => {
   const [backdropVisible, setBackdropVisible] = useState(false);
   const byTitleValueRef = useRef<HTMLInputElement>(null);
   const byLocationValueRef = useRef<HTMLInputElement>(null);
+
+  const { width } = useWindowDimensions();
 
   const searchHandler = () => {
     if (byTitleValueRef.current) {
@@ -46,7 +49,14 @@ const SearchField = () => {
         <StyledSearchForm>
           <StyledFilterFieldContainer>
             <SearchIcon />
-            <Input ref={byTitleValueRef} placeholder="Filter by title..." />
+            <Input
+              ref={byTitleValueRef}
+              placeholder={
+                width > 1400
+                  ? 'Filter by title, companies, expertise…'
+                  : 'Filter by title...'
+              }
+            />
           </StyledFilterFieldContainer>
           <StyledFilterFieldContainer mobile="mobile">
             <LocationIcon />
@@ -64,7 +74,9 @@ const SearchField = () => {
                 id="#fulltime"
               />
 
-              <CheckboxText>Full Time</CheckboxText>
+              <CheckboxText>
+                {width > 1400 ? 'Full Time Only' : 'Full Time'}
+              </CheckboxText>
             </StyledFullTimeCheckboxContainer>
             <StyledSearchButton
               onClick={(e) => {
