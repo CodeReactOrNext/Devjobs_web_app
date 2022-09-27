@@ -142,15 +142,17 @@ export const StyledFullTimeCheckboxContainer = styled.div<{
   gap: 0.625rem;
   height: 1.5rem;
   margin: ${({ modal }) => (modal ? '24px 0' : '0')};
-  width: ${({ modal }) => (modal ? '100%' : '108px')};
   @media (max-width: 769px) {
     display: ${({ mobile }) => mobile === 'mobile' && 'none'};
   }
 `;
 
-export const CheckboxText = styled.span`
+export const CheckboxText = styled.span<{
+  modal?: boolean;
+}>`
   font-size: 1rem;
   font-weight: 700;
+  white-space: nowrap;
   color: ${({ theme }) => theme.headingText};
 `;
 
