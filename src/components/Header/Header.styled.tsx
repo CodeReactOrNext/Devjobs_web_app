@@ -12,6 +12,7 @@ export const StyledHeader = styled.header`
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 1;
 
   @media (min-width: 768px) {
     min-height: 160px;

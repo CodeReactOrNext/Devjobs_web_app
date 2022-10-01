@@ -7,10 +7,15 @@ import { useParams } from 'react-router-dom';
 import JobViewFooter from './JobViewFooter/JobViewFooter';
 import JobViewHeader from './JobViewHeader/JobViewHeader';
 import JobViewMain from './JobViewMain/JobViewMain';
+import Msg404 from 'UI/Msg404/Msg404';
 
 const JobView = () => {
   const { id } = useParams();
   const jobViewData = JobsData.filter((item) => item.id === Number(id!));
+
+  if (!jobViewData.length) {
+    return <Msg404 />;
+  }
 
   return (
     <>
