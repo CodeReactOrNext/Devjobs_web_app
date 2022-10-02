@@ -41,6 +41,7 @@ export const StyledJobViewContainer = styled.section`
   max-width: 750px;
   height: auto;
   gap: 2rem;
+  z-index: 1;
 `;
 export const StyledJobViewDetails = styled.div`
   display: flex;
@@ -60,14 +61,12 @@ export const StyledJobViewCompany = styled.p`
   letter-spacing: 0.25px;
 `;
 
-
 export const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0.75rem;
 `;
-
 
 export const StyledJobViewContent = styled.div`
   position: relative;
